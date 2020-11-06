@@ -1,0 +1,344 @@
+1)  C Programming History
+
+⦁	C programming language is a structure oriented programming language, was developed at Bell Laboratories in 1972 by Dennis Ritchie.
+  C language features were derived from earlier language called “B” (Basic Combined Programming Language – BCPL)
+  
+⦁	In earlier days, programs were written in assembly level language.
+  So, it had happened to write very big programs to perform specific tasks using assembly code.
+  
+⦁	But, ‘B’ language could perform the same task in few lines of program and it was faster than assemble language code.
+
+⦁	C has changed over the years and is still a common language to use in lower level programs, like kernels. 
+  But it is also used for many applications ranging from device drivers to other programming languages’ compilers or interpreters. 
+  The language also made way for C++, Objective-C, C#, and many more C-based languages that each have their own speciality.
+============================================================================================================================================  
+2) Write a c program to find as follows :
+     a) a=30 ,b =20 find a/b,   where a and b are float
+     b) Program to find the area of circle and rectangle.
+     c) Program to print your name with your age.
+ a) 
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	float x =30;
+	float y =20;
+	float z;
+	
+	z=x/y;
+	printf("Division is : %f",z);
+	
+	return 0;
+	
+}
+
+b) #include<stdio.h>   //preprocessor statement
+#include<conio.h>
+
+
+int main()         // main function definition
+   // 2
+   
+	 float pi,radius,area;
+	 pi=3.14;
+	 radius=4.1;
+	 area=pi*radius;
+	 printf("Area of circle : %f",area);
+	 
+	 float length=100,breadth=20;
+	 float rect_area;
+	
+	rect_area=length*breadth;
+	printf("\nArea of Rectangle : %f",rect_area)
+
+
+c) #include<stdio.h>   //preprocessor statement
+#include<conio.h>
+
+
+int main()         // main function definition
+{
+    printf("\nJose 20");
+    
+    return 0;
+    
+}
+==========================================================================================================================
+4) Write a program to define an integer ,character ,float and double values and print all values along with its size.
+
+#include<stdio.h>
+#include<conio.h>
+
+main()
+
+{
+	
+	int i =30;
+	char c ='A';
+	float f =1.2;
+	double d =1.3;
+	
+	printf("Size of integer : %d\n",sizeof(i));
+	printf("Size of character : %d\n",sizeof(c));
+	printf("Size of float : %d\n",sizeof(f));
+	printf("Size of double : %d\n",sizeof(d));
+	
+}
+===========================================================================================================================
+5) Create a program to take 2 values from user and print addition, multiplication ,subtraction and division.
+
+#include<stdio.h>
+#include<conio.h>
+
+main()
+{
+
+	
+	int a =20;
+	int b =10;
+	int c;
+	
+	printf("\ndivision of %d and %d is %d",a,b,(a/b));
+	printf("\naddition of %d and %d is %d",a,b,(a+b));
+	printf("\nsubtraction of %d and %d is %d",a,b,(a-b));
+	printf("\nmultiplication of %d and %d is %d",a,b,(a*b));
+	
+	
+	return 0;
+	
+}
+==================================================================================================================
+6) Take two numbers from user and compare values and print results as false or true.
+
+#include<stdio.h>
+#include<conio.h>
+
+main()
+{
+
+	
+	int x =30;
+	int y=40;
+	
+	
+	printf("%d\n",(x<y));
+	printf("%d\n",(x>y));
+	printf("%d\n",(x<=y));
+	printf("%d\n",(x>=y));
+	printf("%d\n",(x==y));
+	printf("%d\n",(x!=y));
+	
+	
+	return 0;
+	
+}
+
+7) Create two variables , one is integer and other is double and do the operations like multiplication and subtraction on these variable.
+
+
+#include<stdio.h>
+#include<conio.h>
+
+main()
+{
+
+	
+	int a =20;
+	double  b =2.5;
+	
+	
+	printf("multiplication of %d\n and %d is %d",a,d,(a*d));
+	
+	printf("subtraction of %d\n and %d is %d",a,d,(a-d));
+	
+	
+	
+	return 0;
+	
+}
+======================================================================================================================================
+8) Write a program to define a function Calculator() which accepts two integer values and print sum,subtraction,division and multiplication.
+
+#include<stdio.h>
+#include<conio.h>
+
+void calculator(int a,int b);
+
+int main()
+{
+	calculator(20,30);
+	return 0;
+	
+}
+
+void calculator(int a,int b)
+{
+	printf("\ndivision :%d",(a/b));
+	printf("\nmultiplication :%d",(a*b));
+	printf("\nsubtraction :%d",(a-b));
+	
+	
+}
+===========================================================================================================================
+12) Write a program to display the result acoording to following using only if:
+     
+       marks < 40        Fail
+       40 <= marks <65   Second Division
+       65 <= marks < 75  First Division
+       75 <= marks       Distinction
+
+#include<stdio.h>
+#include<conio.h>
+
+ 
+
+int main()
+{
+    int marks=83;
+    
+    if(marks<40)
+        printf("marks is fail");
+    if(40<=marks<65)
+        printf("\nmarks is second division");
+    if(65<=marks<75)
+        printf("\nmarks is first division");
+    if(75<=marks)
+        printf("\nmarks is distinction");
+        
+        return 0;
+        
+    }
+===========================================================================================================
+14) Write a program using switch....case , create a function which takes two values as parameters 
+
+    +   ======>  Do Addition of two nos.
+    -   ======>  Subtraction
+    /   ======>  Division
+    *   ======>  Multiplication
+
+
+#include<stdio.h>
+
+void calculation(float x,float y)
+{
+	char opr;
+	fflush(stdin);
+	printf("Press + to add\n- to subtract\n* to multiply\n/ to divide :");
+	scanf("%c",&opr);
+	
+	switch(opr)
+	{
+	   case '+':
+	printf("Sum : %f",(x+y));
+      break;
+	case '-':
+	printf("Subtraction :%f",(x-y));
+	break;
+	case'*':
+	printf("Multiply : %f",(x*y));
+	break;
+	case'/':
+     printf("Division : %f",(x/y));
+	break;
+	default:
+	printf("Invalid option");
+							
+	}
+}
+
+int main()
+{
+	float n1,n2;
+	printf("Enter two numbers :");
+	scanf("%f%f",&n1,&n2);
+	calculation(n1,n2);
+}
+===============================================================================
+15) Write a program to do the following using switch...case
+
+    Read percentage of a student inside a function and check if the percentage lies in the following range and print the Grade accodingle :
+    Percentage            Grade
+    80<per<=100           A+
+    60<per<=80            A
+    per<60                Fail
+    
+    
+include<stdio.h>
+#include<conio.h>
+
+void percentage(int per)
+
+ 
+{
+	switch(per)
+	{
+		case 80 ... 100:
+		printf("80<=per<=100");
+		break;
+		case 21 ... 40:
+		printf("60<=per<=80");
+		break;
+		case 41 ... 60:
+		printf("per<60");
+		break;
+		
+		default:
+			printf("your grade is :A");
+	}
+}
+ int main()
+ {
+ 	int per;
+ 	printf("Enter your percentage :");
+ 	scanf("%d",&per);
+ 	
+ 	percentage(per);
+ 	printf("\n");
+ 	percentage(67);
+ 
+}
+
+ ===============================================================================       
+ 16) Display the following Pattern :
+     *
+     **
+     ***
+     ****
+     *****
+     
+  #include<conio.h>
+
+void main()
+{
+	char print='*';
+	int row,col;
+	int noofrows=5;
+	
+	for(row=1;row<=noofrows;row++)
+	{
+		for(col=1;col<=row;col++)
+		{
+			printf("%c",print);
+				
+		}
+	printf("\n");
+}
+}
+=================================================================================
+   
+
+
+	
+
+
+
+
+
+    
+
+
+
+
+
+
