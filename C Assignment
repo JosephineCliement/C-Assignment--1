@@ -326,7 +326,22 @@ void main()
 }
 }
 =================================================================================
-   
+     17) Print the table of the entered number.
+     
+     #include<stdio.h>
+    #include<conio.h>
+
+     main()
+     {
+	printf("\n");
+	int i;
+	
+	for(i=0;i<30;i=i+3)
+	{
+		printf("%d\t",i);
+	}
+      }
+
 
 
 	
