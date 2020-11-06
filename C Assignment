@@ -342,6 +342,24 @@ void main()
 	}
       }
 
+  22) Print the sum of only odd numbers between 1 and 10.
+
+  #include<stdio.h>
+  #include<conio.h>
+  main()
+   {
+	printf("\n");
+	int i;
+	for(i=0;i<10;i++)
+	{
+		if(i%2!=0)
+		printf("%d\n",i);
+	}
+
+
+}
+	
+
 
 
 	
