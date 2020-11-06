@@ -336,7 +336,7 @@ void main()
 	printf("\n");
 	int i;
 	
-	for(i=0;i<30;i=i+3)
+	for(i=0;i<=30;i=i+3)
 	{
 		printf("%d\t",i);
 	}
