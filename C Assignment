@@ -342,6 +342,27 @@ void main()
 	}
       }
 ===================================================================
+  18) Print the square of number between 1 and 10.
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+int main()
+
+{
+	int a,b;
+	for(a=1;a<=10;a++)
+	{
+		b=a*a;
+		printf("Square of %d is %d\n",a,b);
+		
+	}
+	return 0;
+}
+
+
+
   21) Print the sum of numbers between 10 and 20.
 
 #include<stdio.h>
