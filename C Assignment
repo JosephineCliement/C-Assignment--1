@@ -1,14 +1,14 @@
 1)  C Programming History
 
-⦁	C programming language is a structure oriented programming language, was developed at Bell Laboratories in 1972 by Dennis Ritchie.
+  1) C programming language is a structure oriented programming language, was developed at Bell Laboratories in 1972 by Dennis Ritchie.
   C language features were derived from earlier language called “B” (Basic Combined Programming Language – BCPL)
   
-⦁	In earlier days, programs were written in assembly level language.
+2) In earlier days, programs were written in assembly level language.
   So, it had happened to write very big programs to perform specific tasks using assembly code.
   
-⦁	But, ‘B’ language could perform the same task in few lines of program and it was faster than assemble language code.
+3) But, ‘B’ language could perform the same task in few lines of program and it was faster than assemble language code.
 
-⦁	C has changed over the years and is still a common language to use in lower level programs, like kernels. 
+4) C has changed over the years and is still a common language to use in lower level programs, like kernels. 
   But it is also used for many applications ranging from device drivers to other programming languages’ compilers or interpreters. 
   The language also made way for C++, Objective-C, C#, and many more C-based languages that each have their own speciality.
 ============================================================================================================================================  
@@ -361,8 +361,24 @@ int main()
 	return 0;
 }
 
+======================================================================================
+   19) Write a program to print the values between 1 and 30.
 
+#include<stdio.h>
 
+main()
+{    
+    int i;
+	for(i=0;i<=30;i++)
+	{
+		if(i==1 || i==5 || i==9 || i==10 || i==15)
+		continue;
+		printf("%d\n",i);
+		
+	}
+}
+
+=========================================================================================
   21) Print the sum of numbers between 10 and 20.
 
 #include<stdio.h>
