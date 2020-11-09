@@ -415,7 +415,29 @@ main()
 
 }
 	
+=========================================================================================
 
+  32) Accept first name and lastname from user and print fullname.
+  
+  #include<stdio.h>
+#include<string.h>
+  
+
+  main()
+  {
+     char name[10];
+     
+     printf("Enter your name : ");
+     scanf("%s",name);
+     
+     gets(name);
+     printf("Your name : %s",name);
+     puts(name);
+     
+     
+  }
+  
+  
 
 
 	
