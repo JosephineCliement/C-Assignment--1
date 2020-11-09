@@ -416,6 +416,28 @@ main()
 }
 	
 =========================================================================================
+  31) Create an array of 5 integer values and print the double of every value of an array using pointer concept:
+
+#include<stdio.h>
+#include<conio.h>
+ int main()
+ {
+   int numbers[]={1,2,3,4,5};
+    int *p;
+    
+    p=numbers;
+    int i;
+    for(i=0;i<5;i++)
+    {
+    	printf("%d\t",(p[i]*2));
+	}
+    printf("\n");
+}
+
+
+
+
+
 
   32) Accept first name and lastname from user and print fullname.
   
