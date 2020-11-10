@@ -454,7 +454,58 @@ main()
 	
     }
   
-  
+  =====================================================================================================================
+  35) Make two pointer variables p1 and p2 which are pointing to x and y variables, x=10, y=20. Create a function which accepts two pointers as a parameter and 
+      perform addition operation on x and y. 
+
+
+#include<stdio.h>
+#include<conio.h>
+
+void function(int *p1, int *p2)
+{
+	printf("sum : %d\n",*p1+*p2);
+
+	
+}
+
+main()
+{
+	int x=10;
+	int y=20;
+	
+	int*p1;
+	int*p2;
+	
+p1=&x;
+p2=&y;
+
+     
+     function(p1,p2);
+}
+
+==============================================================================================
+  36) Create a function addition() which accepts addresses of two variables. This function does the addition of two numbers.
+
+
+#include<stdio.h>
+#include<conio.h>
+
+int* show()
+{
+	int *p;
+	int x=50;
+	p=&x;
+	return p;
+	
+}
+int main()
+{
+	int *s;
+	
+	s=show;
+	printf("%d",*s);
+}
 
 
 	
