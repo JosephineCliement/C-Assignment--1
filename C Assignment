@@ -582,7 +582,23 @@ main()
 	puts(name);
 }
     
+======================================================================
+Q2) Write a program to copy a string into another.
+
+#include<stdio.h>
+#include<string.h>
+ main()
+{
+	char str1[20]="Hello";
+	char str2[20];
 	
+	puts(str1);
+	
+	strcpy(str2,str1);
+	
+	puts(str2);
+	
+}
 
 	
 
