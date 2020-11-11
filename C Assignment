@@ -480,6 +480,39 @@ main()
 	puts(name);
 	
     }
+ ========================================================================================================
+ 33) write a program to to take a city name from user and print the city name in reverse order using character pointer.
+
+#include<stdio.h>
+
+void reverse(char*);
+
+int main()
+{
+	char str[10];
+	printf("\nenter string = ");
+	gets(str);
+	
+	reverse(str);
+	return 0;
+}
+
+void reverse(char *p)
+{
+	int i,c=0;
+	for(i=0;*(p+i)!='\0';i++)
+	{
+		c++;
+	}
+	printf("\nstring reverse = ");
+	for(i=c-1;i>=0;i--)
+	{
+		printf("%c",*(p+i));
+	}
+}
+  
+  
+  
   
   =====================================================================================================================
   35) Make two pointer variables p1 and p2 which are pointing to x and y variables, x=10, y=20. Create a function which accepts two pointers as a parameter and 
