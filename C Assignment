@@ -567,6 +567,24 @@ int main()
 	printf("%d",*s);
 }
 
+=========================================================================================================================
+Q1) Create a program to enter your name and age from keyboard and print name and age.
+
+#include<stdio.h>
+#include<string.h>
+main()
+{
+	char name[10];
+	
+	printf("Enter your name  and age : ");
+	
+	gets(name);
+	puts(name);
+}
+    
+	
+
+	
 
 	
 
