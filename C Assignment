@@ -600,7 +600,28 @@ Q2) Write a program to copy a string into another.
 	
 }
 
+================================================================================
+Q3) Create a program to input a string from user and find its length.
+
+#include<stdio.h>
+#include<string.h>
+main()
+{
+	char name[10];
 	
+	printf("Enter your name : ");
+	
+	gets(name);
+	
+	int len=strlen(name);
+	
+	puts(name);
+	
+    printf("Length of string : %d ",len);
+	
+
+	
+}
 
 	
 
