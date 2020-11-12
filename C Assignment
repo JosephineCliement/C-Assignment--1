@@ -622,9 +622,27 @@ main()
 
 	
 }
+==============================================================================================================
+  Q5) Input pricipal amount = 20000, rate of interest = 7.5 and no of years= 2  ,find simple interest using formula as 
+       SI = p*r*t / 100 
 
 	
+#include<stdio.h>
 
+void main()
+{
+    float p=20000,r=7.5,t=2,si;
+    
+    printf("Finding Simple interest of :\n");
+    
+    printf("The Principal amount is %f , Rate of interest is %f and Number of years is %f\n",p,r,t);
+    
+    si= p*r*t / 100;
+    
+    printf("\tAnswer:\n");
+    
+    printf("Therfore the Simple interest  will be %f",si);
+}
 
 
 
