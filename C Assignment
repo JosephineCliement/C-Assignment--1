@@ -510,7 +510,30 @@ void reverse(char *p)
 		printf("%c",*(p+i));
 	}
 }
+===================================================================================================================================
+  34) Input a string from user and print only vowels of the string.
   
+  #include<stdio.h>
+#include<conio.h>
+main()
+{
+	
+	char city[10];
+	
+	printf("Enter the city : ");
+	gets(city);
+	
+	int i=0;
+	
+	while(city[i]!='\0')
+{
+	if(city[i]=='a' || city[i]=='e' || city[i]=='i' || city[i]=='o' || city[i]=='u')
+	printf("%c\t",city[i]);
+	i++;
+}
+	
+}
+
   
   
   
