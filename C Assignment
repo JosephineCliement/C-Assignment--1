@@ -208,6 +208,65 @@ void calculator(int a,int b)
 	
 }
 ===========================================================================================================================
+
+9) Write a program to define a function which takes a number from user and print the number.
+#include<stdio.h>
+void fun()
+{ int num;
+  printf("Enter you number: ");
+  scanf("%d",&num);
+ printf("Your number %d is luckly number for you ",num);
+}
+int main()
+{
+    fun();
+    return 0;
+}
+
+=========================================================================================
+10) Write a program to take a number from user and pass this number to the function named as Square() which returns the square of the number and print square value in main.
+
+#include<stdio.h>
+
+int square(int v)
+
+{
+	printf("%d^2 = %d",v,(v*v));
+}
+
+int main()
+{
+	int m;
+	printf("enter a number you want to square : ");
+	scanf("%d", &m);
+	square(m);
+	printf("end of code");
+}
+==============================================================================================
+11) Write a function which takes a character in small case and returns the same character in capital case.
+
+#include<stdio.h>
+
+
+int main()
+{
+    char character , capitalcase;
+    printf("\nenter a small character: \n");
+    scanf("%c" ,&character);
+   
+	 if(character>=97&&character<=122)
+     {
+	     capitalcase = character - 32;
+         printf("\nthe given character in capitalcase = %c\n",capitalcase);
+     }
+ else {
+ 	    printf("enter a smallcase character");
+ }
+ return 0;    
+}
+
+=====================================================================================================
+
 12) Write a program to display the result acoording to following using only if:
      
        marks < 40        Fail
@@ -237,6 +296,29 @@ int main()
         
     }
 ===========================================================================================================
+13) Write a program to find the largest of two numbers given by user.
+
+#include<stdio.h>
+
+int main()
+{
+
+	int  a, b;
+	
+	printf("enter 2 integer numbers\n");
+	scanf("%d%d",&a , &b);
+	
+	printf("largest of %d %d is %d\n", a, b, largest(a, b));
+	
+	return 0;
+}
+
+int largest(int x, int y)
+{
+	return (x>y?x:y);
+}
+================================================================================
+
 14) Write a program using switch....case , create a function which takes two values as parameters 
 
     +   ======>  Do Addition of two nos.
@@ -591,7 +673,7 @@ int main()
 }
 
 =========================================================================================================================
-Q1) Create a program to enter your name and age from keyboard and print name and age.
+39) Create a program to enter your name and age from keyboard and print name and age.
 
 #include<stdio.h>
 #include<string.h>
@@ -606,7 +688,7 @@ main()
 }
     
 ======================================================================
-Q2) Write a program to copy a string into another.
+40) Write a program to copy a string into another.
 
 #include<stdio.h>
 #include<string.h>
@@ -624,7 +706,7 @@ Q2) Write a program to copy a string into another.
 }
 
 ================================================================================
-Q3) Create a program to input a string from user and find its length.
+41) Create a program to input a string from user and find its length.
 
 #include<stdio.h>
 #include<string.h>
@@ -646,7 +728,7 @@ main()
 	
 }
 ==============================================================================================================
-Q4)
+42)
 #include<stdio.h>
 #include<string.h>
 int main()
@@ -693,7 +775,7 @@ int main()
 
 
 
-  Q5) Input pricipal amount = 20000, rate of interest = 7.5 and no of years= 2  ,find simple interest using formula as 
+  43) Input pricipal amount = 20000, rate of interest = 7.5 and no of years= 2  ,find simple interest using formula as 
        SI = p*r*t / 100 
 
 	
