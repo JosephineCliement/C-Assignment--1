@@ -86,6 +86,46 @@ main()
 
 
 Q.3 Create an array of structure which is used to store 3 employee records.
+
+#include<stdio.h>
+#include<conio.h>
+
+struct employee
+{
+	int id;
+	char name[30];
+	char city[30];
+};
+
+int main()
+{
+	struct employee e[7];
+	char nm[25];
+	char cy[20];
+	int i;
+	for(i=0;i<3;i++)
+	{
+		printf("enter id : ");
+		scanf("%d",&e[i].id);
+		
+		fflush(stdin);
+		printf("enter name : ");
+		gets(nm);
+		strcpy(e[i].name,nm);
+		
+		fflush(stdin);
+		printf("enter city : ");
+		gets(cy);
+		strcpy(e[i].city,cy);
+		fflush(stdin);
+	}
+	
+	for(i=0;i<3;i++)
+	{
+		printf("id : %d , name : %s , city : %s\n",e[i].id,e[i].name,e[i].city);
+	}
+}
+
 Q.4 Create a float pointer which points to the float array and access all elements of array using float pointer
 #include<stdio.h>
 
