@@ -256,16 +256,6 @@ int main()
     
 }
 =====================================================================================
-
-
-
-
-
-
-
-
-
-
 Q.7 Create a stack of 5 names of employees and delete the last name and display it. 
 Q.8 Create two stacks A and B . A contains 3 alphabets and B contains 3 numbers. Display Both stacks.
 #include<stdio.h>
@@ -453,14 +443,73 @@ int main()
     
 }
 =============================================================================================================
-
-
-
-
-
-
-
 Q.9 Create a queue which contains 5 double values and print all values.
+#include<stdio.h>
+#define SIZE 5
+
+typedef struct queue
+
+{
+	int front;
+	int rear;
+	double elements[SIZE];
+}queue;
+
+void initialize(queue *sp)
+{
+	sp->front=-1;
+	sp->rear=-1;
+}
+  void add(queue *sp,double item)
+  {
+  	if(sp->rear==SIZE-1)
+  	printf("\nStack overflow");
+  	else
+  	{
+	  if(sp->front == -1)
+	  sp->front=0;
+	  
+  	sp->elements[++sp->rear]=item;
+  	
+}
+}
+int rem(queue *sp)
+{
+	char x;
+	if(sp->front==-1)
+	printf("\nStack underflow");
+	else
+	x=sp->elements[sp->front++];
+	return x;
+	
+}
+
+void display(queue *sp)
+{
+	int i;
+	for(i=sp->front;i<=sp->rear;i++)
+	{
+		printf("Double values  : %lf\n",sp->elements[i]);
+	}
+}
+
+int main()
+{
+	queue e;
+	initialize(&e);
+	add(&e,10.234);
+	add(&e,11.234);
+	add(&e,12.234);
+	add(&e,13.234);
+	add(&e,14.234);
+	
+	display(&e);
+}
+
+
+
+
+===================================================================================================
 Q.10 Create a queue which contains 5 numbers and print the square value of every element of the queue.
 
 #include<stdio.h>
