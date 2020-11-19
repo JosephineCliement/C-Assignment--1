@@ -167,10 +167,394 @@ int main()
 }
 ========================================================================================
 Q.6 Create a stack of 5 characters and display all elements.
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 7
+
+ 
+
+typedef struct st
+{
+    int top;
+    char elements[SIZE];
+}stack;
+
+ 
+
+void initialize(stack *sp)
+{
+    sp->top=-1;
+}
+
+ 
+
+void push(stack *sp,int item)
+{
+    if(is_full(sp))
+    printf("\nstack overflow");
+    
+    else 
+    sp->elements[++sp->top]=item;
+}
+
+ 
+
+int pop(stack *sp)
+{
+    int x;
+    if(is_empty(sp))
+    printf("\nstack underflow");
+    
+    else
+    x=sp->elements[sp->top--];
+    
+    return x;
+}
+
+ 
+
+int is_full(stack *sp)
+{
+    if(sp->top==SIZE-1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+ 
+
+int is_empty(stack *sp)
+{
+    if(sp->top== -1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+ 
+
+int main()
+{
+    stack s1;
+    
+    push(&s1,'r');
+    push(&s1,'o');
+    push(&s1,'s');
+    push(&s1,'h');
+    push(&s1,'a');
+    push(&s1,'n');
+    
+    int i;
+    
+    for(i=s1.top;i!=-1;i--)
+    {
+        printf("%c",s1.elements[i]);
+    }
+    
+    
+}
+=====================================================================================
+
+
+
+
+
+
+
+
+
+
 Q.7 Create a stack of 5 names of employees and delete the last name and display it. 
 Q.8 Create two stacks A and B . A contains 3 alphabets and B contains 3 numbers. Display Both stacks.
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 3
+
+ 
+
+typedef struct a_st
+{
+    int Atop;
+    char Aelements[SIZE];
+}A;
+
+ 
+
+typedef struct b_st
+{
+    int Btop;
+    int Belements[SIZE];
+}B;
+
+ 
+
+void Ainitialize(A *sp)
+{
+    sp->Atop=-1;
+}
+
+ 
+
+void Binitialize(B *sp)
+{
+    sp->Btop=-1;
+}
+
+ 
+
+void Apush(A *sp,char item)
+{
+    if(A_is_full(sp))
+    printf("\nstack overflow\n");
+    
+    else
+    sp->Aelements[++sp->Atop]=item;
+}
+
+ 
+
+void Bpush(B *sp,int item)
+{
+    if(B_is_full(sp))
+    printf("\nstack overflow\n");
+    
+    else
+    sp->Belements[++sp->Btop]=item;
+}
+
+ 
+
+int Apop(A *sp)
+{
+    int x;
+    
+    if(A_is_empty(sp))
+    printf("\nstack underflow");
+    
+    else
+    x=sp->Aelements[sp->Atop--];
+    
+    return x;
+}
+
+ 
+
+int Bpop(B *sp)
+{
+    int x;
+    
+    if(B_is_empty(sp))
+    printf("\nstack underflow");
+    
+    else
+    x=sp->Belements[sp->Btop--];
+    
+    return x;
+}
+
+ 
+
+int A_is_full(A*sp)
+{
+    if(sp->Atop == SIZE-1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+ 
+
+int B_is_full(B *sp)
+{
+    if(sp->Btop == SIZE-1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+ 
+
+int A_is_empty(A *sp)
+{
+    if(sp->Atop == -1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+ 
+
+int B_is_empty(B *sp)
+{
+    if(sp->Btop == -1)
+    return 1;
+    
+    else
+    return 0;
+}
+
+ 
+
+void A_display(A *sp)
+{
+    int i;
+    
+    for(i=sp->Atop;i!=-1;i--)
+    {
+        printf("%c",sp->Aelements[i]);
+    }
+    
+    printf("\n\n");
+}
+
+ 
+
+void B_display(B *sp)
+{
+    int i;
+    
+    for(i=sp->Btop;i!=-1;i--)
+    {
+        printf("%d",sp->Belements[i]);
+    }
+    
+    printf("\n\n");
+}
+
+ 
+
+int main()
+{
+     A a;
+    
+    Ainitialize(&a);
+    
+    Apush(&a,'a');
+    Apush(&a,'b');
+    Apush(&a,'c');
+    
+    A_display(&a);
+    
+    B b;
+    
+    Binitialize(&b);
+    
+    Bpush(&b,1);
+    Bpush(&b,2);
+    Bpush(&b,3);
+    
+    B_display(&b);
+    
+    
+}
+=============================================================================================================
+
+
+
+
+
+
+
 Q.9 Create a queue which contains 5 double values and print all values.
 Q.10 Create a queue which contains 5 numbers and print the square value of every element of the queue.
+
+#include<stdio.h>
+#define SIZE 7
+
+ 
+
+typedef struct queue
+{
+    int front;
+    int rear;
+    int elements[SIZE];
+}queue;
+
+ 
+
+void initialize(queue *sp)
+{
+    sp->front=-1;
+    sp->rear=-1;
+}
+
+ 
+
+void add(queue *sp,int item)
+{
+    if(sp->rear==SIZE-1)
+    printf("\nstack overflow");
+    
+    else
+    {
+        if(sp->front==-1)
+        sp->front=0;
+        sp->elements[++sp->rear]=item;
+    }
+
+ 
+
+}
+
+ 
+
+int rem(queue *sp)
+{
+    char x;
+    if(sp->front==-1)
+    printf("\nstack underflow");
+    
+    else
+    x=sp->elements[sp->front++];
+    
+    return x;
+}
+
+ 
+
+void display(queue *sp)
+{
+    int i;
+    for(i=sp->front;i<=sp->rear;i++)
+    {
+        printf("square values is : %d\n",(sp->elements[i])*(sp->elements[i]));
+    }
+}
+
+ 
+
+int main()
+{
+    queue v;
+    initialize(&v);
+    add(&v,1);
+    add(&v,2);
+    add(&v,3);
+    add(&v,4);
+    add(&v,5);
+
+ 
+
+    display(&v);    
+}
+ ======================================================================================================================
+ 
+ 
+
+
+
+
+
+
+
+
+
+
 Q.11 Create a stack which contains ASCII values for alphabets and print Alphabets.
 Q.12 Take 10 numbers from user, Make two stacks as Even & Odd, Even stack contains even numbers , Odd stack contains odd numbers.
 Q.13 Make a program to copy elements of one stack to another.
