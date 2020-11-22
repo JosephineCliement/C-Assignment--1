@@ -518,70 +518,80 @@ int main()
 }
 =============================================================================================================
 Q.9 Create a queue which contains 5 double values and print all values.
+
 #include<stdio.h>
+#include<stdlib.h>
 #define SIZE 5
+
+ 
 
 typedef struct queue
 
+ 
+
 {
-	int front;
-	int rear;
-	double elements[SIZE];
+int front;
+int rear;
+double elements[SIZE];
 }queue;
 
-void initialize(queue *sp)
+ 
+
+void initialize(queue *qp)
 {
-	sp->front=-1;
-	sp->rear=-1;
+qp->front=-1;
+qp->rear=-1;
 }
-  void add(queue *sp,double item)
-  {
-  	if(sp->rear==SIZE-1)
-  	printf("\nStack overflow");
-  	else
-  	{
-	  if(sp->front == -1)
-	  sp->front=0;
-	  
-  	sp->elements[++sp->rear]=item;
-  	
-}
-}
-int rem(queue *sp)
+void add(queue *qp,double item)
 {
-	char x;
-	if(sp->front==-1)
-	printf("\nStack underflow");
-	else
-	x=sp->elements[sp->front++];
-	return x;
-	
+if(qp->rear==SIZE-1)
+printf("\nqueue overflow");
+else
+{
+if(qp->front == -1)
+qp->front=0;
+qp->elements[++qp->rear]=item;
+}
+}
+int rem(queue *qp)
+{
+char x;
+if(qp->front==-1)
+printf("\nqueue underflow");
+else
+x=qp->elements[qp->front++];
+return x;
 }
 
-void display(queue *sp)
+ 
+
+void display(queue *qp)
 {
-	int i;
-	for(i=sp->front;i<=sp->rear;i++)
-	{
-		printf("Double values  : %lf\n",sp->elements[i]);
-	}
+ int i;
+ for(i=qp->front;i<=qp->rear;i++)
+  {
+    printf("double values : %lf\n",qp->elements[i]);
+  }
 }
+
+ 
 
 int main()
 {
-	queue e;
-	initialize(&e);
-	add(&e,10.234);
-	add(&e,11.234);
-	add(&e,12.234);
-	add(&e,13.234);
-	add(&e,14.234);
-	
-	display(&e);
+queue *qp;
+qp=(queue*)malloc(sizeof(queue));
+
+ 
+
+initialize(qp);
+add(qp,1);
+add(qp,2);
+add(qp,3);
+add(qp,4);
+add(qp,5);
+display(qp);
 }
-
-
-
+==================================================================================
 
 ===================================================================================================
 Q.10 Create a queue which contains 5 numbers and print the square value of every element of the queue.
