@@ -1124,23 +1124,234 @@ int main()
 }
 
 ===================================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Q.16 Write a program to count the number of nodes in the link list.
+#include<stdio.h> 
+#include<stdlib.h>
+
+//MULTIPLE NODES
+ 
+typedef struct st
+ 
+{
+
+ 
+int data;
+
+ 
+struct nd *next;
+
+ 
+}node;
+
+ 
+typedef struct ls
+
+ 
+{
+
+ 
+node *head,*tail;
+
+ 
+}list;
+
+ 
+void initialize(list *s)
+
+ 
+{
+
+ 
+s->head = NULL;
+
+ 
+s->tail = NULL;
+
+ 
+}
+
+ 
+node* createnode(int x)
+
+ 
+{
+
+ 
+node *sp;
+
+ 
+sp = (node*)malloc(sizeof(node));
+
+ 
+if(sp == NULL)
+
+ 
+{
+
+ 
+printf("Memoy not avaliable");
+
+ 
+exit(0);
+
+ 
+}
+ 
+sp->data = x;
+
+ 
+sp->next = NULL;
+
+ 
+return sp;
+
+ 
+}
+
+ 
+void insertAtail(list *s,int x)
+
+ 
+{
+
+ 
+node *sp;
+
+ 
+sp=createnode(x);
+
+ 
+if(s->head==NULL)
+
+ 
+s->head=sp;
+
+ 
+else
+
+ 
+s->tail->next=sp;
+
+ 
+s->tail=sp;
+
+ 
+}
+
+ 
+void traverse(list *s)
+
+ 
+{
+
+ 
+node *p;
+
+ 
+p=s->head;
+
+ 
+while(p!=0)
+
+ 
+{
+
+ 
+printf("%d\n",p->data);
+
+ 
+p=p->next;
+
+ 
+}
+
+ 
+}
+
+ 
+int getnodes(list *s)
+
+ 
+{
+
+ 
+node *p;
+
+ 
+int count=0;
+
+ 
+for(p=s->head;p!=NULL;p=p->next)
+
+ 
+{
+
+ 
+++count;
+
+ 
+}
+
+ 
+return count;
+
+ 
+}
+
+ 
+int main()
+
+ 
+{
+
+ 
+list *s;
+
+ 
+s=(list*)malloc(sizeof(list));
+
+ 
+if(s == NULL)
+
+ 
+{
+
+ 
+printf("Memory not available");
+
+ 
+exit(0);
+
+ 
+}
+
+ 
+initialize(s);
+
+ 
+insertAtail(s,100);
+
+ 
+insertAtail(s,200);
+
+ 
+insertAtail(s,300);
+
+ 
+traverse(s);
+
+ 
+int count = getnodes(s);
+
+ 
+printf("NO. OF NODES : %d",count);
+
+ 
+}
+
+
+==========================================================================================
+
 Q.17 Create a Link list of 3 nodes containing 3 double values and print the average of 3 numbers.
 Q.18 Create a Link list of 5 nodes and print it in reverse order.
 ©Q.19 Create a Link list of 3 nodes and delete the head node.
