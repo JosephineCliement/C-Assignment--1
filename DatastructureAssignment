@@ -1357,6 +1357,57 @@ Q.18 Create a Link list of 5 nodes and print it in reverse order.
 ©Q.19 Create a Link list of 3 nodes and delete the head node.
 Q.20 Create a list of 3 city names and Enter a city to be searched in the list .If city name exists in list then Display City Found.
 Q.21 Create an array of 5 integer values and search an element in the array using Linear Search.
+#include<stdio.h>
+#include<conio.h>
+
+ void main()
+{
+	int arr[5]={10,20,30,40};
+	
+	int item,flag;
+	
+	printf("\nEnter no   which is to be searched : ");
+	scanf("%d",&item);
+	
+	int i;
+	for(i=0;i<10;i++)
+	{
+		if(arr[i] == item)
+		{
+			flag = i+1;
+			break;
+		}
+		
+		else
+		flag = 0;
+	}
+	
+	if(flag !=0)
+	{
+		printf("\n found at location %d\n",flag,item);
+		
+	}
+	
+	else
+	{
+		printf("\nNo not found \n");
+	}
+}
+======================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Q.22 Create an array of string and search a perticular string using Linear Search.
 Q.23 Sort an array of 5 numbers using Insertion sort
 Q.24 Make a tree which contains 3 nodes. A is Root node, B is left child and C is right child.
