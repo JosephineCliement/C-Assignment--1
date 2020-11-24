@@ -937,6 +937,107 @@ int main()
 =================================================================================================================
 
 Q.13 Make a program to copy elements of one stack to another.
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+
+// Example of Stack to revrse a string
+typedef struct st1
+{
+	int top;
+	int elements[SIZE];	
+}stack1;
+
+typedef struct st2
+{
+	int top;
+	int elements[SIZE];	
+}stack2;
+
+// Initiazation of stack, top = -1
+
+void initialize(stack1 *sp1,stack2 *sp2)       // sp = &s1
+{
+	sp1->top=-1;
+	sp2->top=-1;
+}
+
+// Add an element on the top of the stack / PUSH operation
+
+void pushToStack1(stack1 *sp,int item)
+{
+		if(sp->top == SIZE-1)	
+			printf("\nStack overflow\n");
+		else
+			sp->elements[++sp->top]=item;
+}
+
+
+void pushToStack2(stack2 *sp,int item)
+{
+		if(sp->top == SIZE-1)	
+			printf("\nStack overflow\n");
+		else
+			sp->elements[++sp->top]=item;
+}
+// Delete an element from the stack / POP operation
+
+void copyToStack(stack1 *s1,stack2 *s2)
+{
+	int i;
+	
+	for(i=0;i<=s1->top;i++)
+	{
+		printf("%d ",s1->elements[i]);
+		pushToStack2(s2,s1->elements[i]);	
+	}	
+}
+
+void displayCopiedStack(stack2 *s)
+{
+	int i;
+	for(i=0;i<=s->top;i++)
+	{
+		printf("%d ",s->elements[i]);	
+	}	
+}
+
+int main()
+{
+	stack1 *s1;
+	stack2 *s2;
+	
+	s1=(stack1*)malloc(sizeof(stack1));
+	s2=(stack2*)malloc(sizeof(stack2));
+	
+	initialize(s1,s2);
+		
+	printf("==========\n");
+	printf("Stack : 1 \n===========\n");
+	
+	pushToStack1(s1,10);
+	pushToStack1(s1,20);
+	pushToStack1(s1,30);
+	pushToStack1(s1,40);
+		
+	copyToStack(s1,s2);
+	
+	printf("\n=========\n");
+	printf("Stack : 2 \n==============\n");
+	displayCopiedStack(s2);
+	}
+	===================================================================================================
+
+
+
+
+
+
+
+
+
+
+
 Q.14 Read 5 numbers from user and store it in a stack.
 #include<stdio.h>
 #include<stdlib.h>
