@@ -1360,6 +1360,55 @@ Q.21 Create an array of 5 integer values and search an element in the array usin
 Q.22 Create an array of string and search a perticular string using Linear Search.
 Q.23 Sort an array of 5 numbers using Insertion sort
 Q.24 Make a tree which contains 3 nodes. A is Root node, B is left child and C is right child.
+#include<stdio.h>
+#include<stdlib.h>
+
+
+  typedef struct tr         
+{                         
+	char data;
+	struct tr *left;
+	struct tr *right;
+}tree;
+
+ tree* createnode(char ch)
+{
+   tree *n;
+	
+	n=(tree*)malloc(sizeof(tree));  
+	
+	n->data=ch;
+	n->left=NULL;
+	n->right=NULL;
+	
+	return n;
+}
+
+int main()
+{	
+	tree *root,*n1,*n2;	
+	
+	root = createnode('A');
+	
+	n1=createnode('B');
+	
+	n2=createnode('C');
+	
+	root->left=n1;
+	root->right=n2;
+	
+	
+		
+	printf("\t%c\n",root->data);
+	
+	printf("%c\t",root->left->data);
+	
+	printf("\t%c\n",root->right->data);
+	
+	
+}
+================================================================================================================================
+
 Q.25 Create a tree of 3 nodes where root node displays the value as "Color" , Left node of root shows value as "Red" and right node shows value as Green. 
      and print all node values in using preorder traversal.
 Q.26 Create a link list of 3 integers and print the elements of link list in reverse order using stack.
