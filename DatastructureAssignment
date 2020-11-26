@@ -1443,7 +1443,73 @@ printf("NO. OF NODES : %d",count);
 ==========================================================================================
 
 Q.17 Create a Link list of 3 nodes containing 3 double values and print the average of 3 numbers.
+
+#include<stdio.h>
+#include<conio.h>
+
+
+
+
+
+ void main()
+{
+    char str[10]={'J','o','s','e','p','h','i','n','e'};
+    
+    char ch,flag;
+    
+    printf("\nEnter character  which is to be searched : ");
+    scanf("%c",&ch);
+    
+    int i;
+    for(i=0;i<10;i++)
+    {
+        if(str[i] == ch)
+        {
+            flag = i+1;
+            break;
+        }
+        
+        else
+        flag = 0;
+    }
+    
+    if(flag !=0)
+    {
+        printf("\ncharacter found at location %d\n",flag,ch);
+        
+    }
+    
+    else
+    {
+        printf("\ncharacter not found \n");
+    }
+}
+
+
+
+================================================================================================================
+
 Q.18 Create a Link list of 5 nodes and print it in reverse order.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ©Q.19 Create a Link list of 3 nodes and delete the head node.
 #include<stdio.h>
 #include<stdlib.h>
@@ -1589,20 +1655,9 @@ void displaynodelist()
  ====================================================================
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 Q.20 Create a list of 3 city names and Enter a city to be searched in the list .If city name exists in list then Display City Found.
+
+
 Q.21 Create an array of 5 integer values and search an element in the array using Linear Search.
 #include<stdio.h>
 #include<conio.h>
@@ -1641,19 +1696,6 @@ Q.21 Create an array of 5 integer values and search an element in the array usin
 	}
 }
 ======================================================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Q.22 Create an array of string and search a perticular string using Linear Search.
 Q.23 Sort an array of 5 numbers using Insertion sort
