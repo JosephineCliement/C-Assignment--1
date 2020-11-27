@@ -1665,8 +1665,149 @@ int main()
 
 Q.25 Create a tree of 3 nodes where root node displays the value as "Color" , Left node of root shows value as "Red" and right node shows value as Green. 
      and print all node values in using preorder traversal.
+     
+     #include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+ 
+
+typedef struct nd
+{
+    char data[3][10];
+    struct nd *left;
+    struct nd *right;
+}tree;
+
+ 
+
+tree* createnode(char* no)
+{
+    tree *np;
+    
+    np = (tree*)malloc(sizeof(tree));
+    
+    if(np == NULL)
+    {
+        printf("MEMORY UNAVAILABLE");
+        exit(0);
+    }
+    
+    strcpy(np->data,no);
+    np->left = NULL;
+    np->right = NULL;
+    
+    return np;
+}
+
+ 
+
+void preorderTraversal(tree* root)
+{
+    if(root == NULL)
+    return;
+    printf("%s->",root->data);
+    preorderTraversal(root->left);
+    preorderTraversal(root->right);
+}
+
+ 
+
+int main()
+{
+    tree *root,*n,*m;
+    
+    root = createnode("COLOUR");
+    n = createnode("RED");
+    m = createnode("GREEN");
+
+ 
+
+    root->left = n;
+    root->right = m;
+    
+    printf("ROOT NODE = %s\n",root->data);
+    printf("LEFT NODE = %s\n",root->left->data);
+    printf("RIGHT NODE = %s\n",root->right->data);
+
+ 
+
+    printf("\n");
+    
+    preorderTraversal(root);
+
+ 
+
+}
+    
+===================================================================================================================
+     
+     
+     
+     
+     
+     
+     
+     
 Q.26 Create a link list of 3 integers and print the elements of link list in reverse order using stack.
 Q.27 Write a program to crate an adjacency matrix(3 by 3) using graph , where create edges (0,1),(1,2),(1,1), Store the student age information.
+
+#include<stdio.h>
+
+int main()
+{
+	int ad[3][3];
+	
+	int age;
+	
+	int i,j;
+	
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			if(i==0 && j==1)
+			{
+				printf("Enter age : ");
+				scanf("%d",&age);
+				ad[i][j]=age;
+			}
+			
+			else if(i==1 && j==1)
+			{
+				printf("Enter age : ");
+				scanf("%d",&age);
+				ad[i][j]=age;
+			}
+			
+			else if(i==1 && j==2)
+			{
+				printf("Enter age : ");
+				scanf("%d",&age);
+				ad[i][j]=age;
+			}
+			
+			else
+			{
+				ad[i][j]=0;
+			}
+		}
+		
+	}
+	
+	for(i=0;i<3;i++)
+	{
+		for(i=0;i<3;i++)
+		{
+			printf("%d\t",ad[i][j]);
+		}
+		
+		printf("\n");
+	}
+	
+}
+=================================================================================================
+
 Q.28 Create a Binary Serch Tree with 10 nodes where node value is character and Traverse the tree in postorder.
 Q.29 Create an unsorted array of 5 elements and sort the array in descending order using bubble sort and search an element in array using Binary Search.
 
