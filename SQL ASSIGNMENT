@@ -1,5 +1,20 @@
 Q.1 Create a table Result which stores the records of 5 students where the fields as 
     rollno, name, percentage
+    
+   Ans- create table Result1(rollno number,name varchar2(20),percentage number);
+
+select * from Result1;
+insert into Result1 values(5 ,'Ram',40);
+
+    
 Q.2 Add a column in the Result table named as Grade
+Ans-alter table Result1 add grade varchar2(20); 
+
+
+
+
 Q.3 Create a table marks which stores the marks of 5 subjects(physics,chemistry,maths,computer,english) and display the percentage. Store record of 5 students.
 Q.4 Rename the table Result with StudentScore.
+Ans-
+   alter table emp rename to employee;
+   select * from Studentscore;
