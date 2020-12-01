@@ -1,10 +1,14 @@
 Q.1 Create a table Result which stores the records of 5 students where the fields as 
     rollno, name, percentage
     
-   Ans- create table Result1(rollno number,name varchar2(20),percentage number);
+   Ans-  create table Result1(rollno number,name varchar2(20),percentage number);
 
-select * from Result1;
-insert into Result1 values(5 ,'Ram',40);
+         select * from Result1;
+      insert into Result1 values(1 ,'Ram',60);
+       insert into Result1 values(2 ,'Rahul',50);
+       insert into Result1 values(3 ,'Sima',80);
+       insert into Result1 values(4 ,'Neha',60);
+       insert into Result1 values(5 ,'Ram',40);
 
     
 Q.2 Add a column in the Result table named as Grade
