@@ -86,6 +86,26 @@ select * from customers;
 
 
 Q.8 Create a table which stores the salary of 3 employees along with the name and display the names salary wise (highest first).
+Ans- 
+create table Employees(name varchar2(20),salary number);
+
+insert into Employees values('Jesi',10000);
+insert into Employees values('Nancy',20000);
+insert into Employees values('Bela',30000);
+
+select * from Employees;
+
+select * from Employees order by salary desc;
+=====================================================================================
+
+
+
+
+
+
+
+
+
 Q.9 Update the highest salary of the employee in above question to the minimum of all.
 
 
