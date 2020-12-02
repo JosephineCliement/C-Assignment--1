@@ -48,6 +48,25 @@ Q.6 Create a table which stores the information about a product . Fields are pid
      b) Display records in descending order of product cost.
      c) Display record for the product where the cost is highest.
      d) Display the pid and pname of those products where the pcost is same.
+ Ans-
+ create table product(pid number,pname varchar2(20),pqty number,pcost number);
+insert into product values(101,'Keyboard',75,10000);
+insert into product values(102,'Mouse',45,20000);
+insert into product values(103,'USB',65,30000);
+insert into product values(104,'Ram',85,40000);
+insert into product values(104,'Rom',85,40000);
+
+
+select * from product;
+
+select * from product order by pqty asc;
+select * from product order by pcost desc;
+
+  select * from product where pcost >100;
+  select pid,pname from product where pcost = '40000' ;
+
+=============================================================================================     
+     
 Q.7 Create a table where insert 5 records like name,dob and city of a customer using single insert query.
 Q.8 Create a table which stores the salary of 3 employees along with the name and display the names salary wise (highest first).
 Q.9 Update the highest salary of the employee in above question to the minimum of all.
