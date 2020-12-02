@@ -22,3 +22,35 @@ Q.4 Rename the table Result with StudentScore.
 Ans-
    alter table emp rename to employee;
    select * from Studentscore;
+===============================================================================
+Q.5 Create two tables A and B where A has 3 columns and B has 2 columns , Copy last two columns from table A to Table B.
+
+create table A(rollno number,name varchar2(20),city varchar2(20));
+create table B(name varchar2(20),city varchar2(20));
+
+insert into A values(10,'Ram','Delhi');
+insert into A values(20,'Sham','Pune');
+
+
+
+
+insert into B values('Siya','Banglore');
+insert into B values('priya','Mumbai');
+
+select * from A;
+select * from B;
+
+
+insert into B(name,city)select name,city from A;
+=============================================================================================
+Q.6 Create a table which stores the information about a product . Fields are pid,pname,pqty,pcost. 
+     a) Display records in ascending order of quantity.  
+     b) Display records in descending order of product cost.
+     c) Display record for the product where the cost is highest.
+     d) Display the pid and pname of those products where the pcost is same.
+Q.7 Create a table where insert 5 records like name,dob and city of a customer using single insert query.
+Q.8 Create a table which stores the salary of 3 employees along with the name and display the names salary wise (highest first).
+Q.9 Update the highest salary of the employee in above question to the minimum of all.
+
+
+
