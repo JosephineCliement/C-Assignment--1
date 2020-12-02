@@ -68,6 +68,23 @@ select * from product order by pcost desc;
 =============================================================================================     
      
 Q.7 Create a table where insert 5 records like name,dob and city of a customer using single insert query.
+Ans- 
+create table customers(name varchar2(20),dob date,city varchar2(20));
+insert all
+ into customers(name,dob,city) values('Rahul',date '2020-12-12','Delhi')
+ into customers(name,dob,city) values('Rohit',date'2020-12-10','Bangalore')
+ into customers(name,dob,city) values('Neha',date'2020-12-09','Pune')
+ into customers(name,dob,city) values('Pooja',date'2020-10-04','Mumbai')
+ into customers(name,dob,city) values('Roma',date'2020-12-08','Dehu')
+ select * from dual;
+
+select * from customers;
+
+
+================================================================================================================
+
+
+
 Q.8 Create a table which stores the salary of 3 employees along with the name and display the names salary wise (highest first).
 Q.9 Update the highest salary of the employee in above question to the minimum of all.
 
