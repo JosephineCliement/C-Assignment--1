@@ -164,6 +164,23 @@ select * from Customers;
 =============================================================================================================
 Q.15 Create a table person which stores the ID,name,email where define ID as primary key.Create another table Birthday which stores date of birth and ID.
      Join both tables and create Foreign key in Birthday.
+ Ans-
+ create table Person(id number primary key,name varchar2(40),eid varchar2(40));
+create table Birthday(dob date,id number constraint fk_id references Person(id));
+
+insert into Person values(101,'Priya','priya@gmail.com');
+insert into Person values(102,'Neha','neha@gmail.com');
+
+
+insert into Birthday values(date '2020-12-14',101);
+insert into Birthday values(date '2020-10-18',102);
+
+select * from Person;
+
+select * from Birthday;
+
+select P.id,P.name,P.eid,B.dob from Person P,Birthday B where P.id=B.id;
+=========================================================================================================================
 Q.16 Create a table where records of an employee is maintained . 
      Fields are EID (primary key), Ename (NOT NULL), officeno (Unique), DateOfJoining(NOT NULL),CompanyName(Default),Salary(Check is : salary > 0)
      Create PersonnelDetails : ID( Foreign Key ) , Addres (NOT NULL), contactno(NOT NULL , UNIQUE) 
