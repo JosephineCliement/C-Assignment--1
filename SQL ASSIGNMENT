@@ -97,18 +97,30 @@ select * from Employees;
 
 select * from Employees order by salary desc;
 =====================================================================================
-
-
-
-
-
-
-
-
-
 Q.9 Update the highest salary of the employee in above question to the minimum of all.
+Ans-
+update Employees set salary=100 where name='Bela';
+=============================================================================================================
 
 Q.10 create a table employee: eid, age, dept, salary. Show name of dept with lowest salary using group by.
+Ans-
+create table Employee(eid number,age number,dept varchar2(20),salary number);
+
+insert all
+into employee(eid,age,dept,salary) values (101,26,'chemical',5000)
+into employee(eid,age,dept,salary) values (102,20,'chemical',9000)
+into employee(eid,age,dept,salary) values (103,25,'electrical',8000)
+into employee(eid,age,dept,salary) values (104,29,'electrical',1000)
+into employee(eid,age,dept,salary) values (105,24,'software',2000)
+into employee(eid,age,dept,salary) values (106,23,'software',6000)
+select * from dual;
+
+select * from Employee;
+
+
+select dept,min(salary) as "total salary" from Employee group by dept having min(salary)<9000;
+  =========================================================================================================================
+
 Q.11 Write a query to perform following operations on the table :
       a) Create a table as Population :  State, popoulation
       b) Find minimum population
