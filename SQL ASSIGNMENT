@@ -128,6 +128,41 @@ Q.11 Write a query to perform following operations on the table :
       d) find average population
       e) Display name of state population wise in descending order
       f) Display name of state population wise in ascending order
+      
+ Ans-
+ 
+
+
+    
+
+CREATE table Population(State varchar2(20), Population number);
+
+
+insert all
+into Population(State,Population) values('Uttar Pradesh',237882725)
+into Population(State,Population) values('Maharashtra',123144223)
+into Population(State,Population) values('Madhya pradeh',73183)
+into Population(State,Population) values('Goa',1586250)
+into Population(State,Population) values('West Bengal',99609303)
+
+
+select * from dual;
+
+
+select min(Population) AS Min_Population from Population;
+
+
+select max(Population) AS Min_Population from Population;
+
+
+select Avg(Population) AS Min_Population from Population;
+
+
+select * from Population ORDER BY Population desc;
+
+
+select * from Population ORDER BY Population ;
+=========================================================================
 Q.12 Create a table ItemSales : Itemname, Sales, city  
      Display the following output (Create a query which displays the Total sales citywise)
       Item           Sales
@@ -151,6 +186,15 @@ drop table Itemsales;
 
   =========================================================================================================================
 Q.13 Make a table which stores the email id and password where password should not be saved if the length is less than 8 character.
+create table user1(email varchar2(20),password varchar2(20) check (length(password)>8));
+
+insert into user1 values('ab@123','abcdefghij');
+insert into user1 values('ab@123','abc');
+
+
+
+
+
 =========================================================================================================================================================
 Q.14 Make a table which stores the name and mobile no of customers. where mobile no can not saved in database if the mobile no is less than 10 digits.
 ans-
