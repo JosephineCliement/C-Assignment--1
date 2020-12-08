@@ -229,6 +229,31 @@ Q.16 Create a table where records of an employee is maintained .
      Fields are EID (primary key), Ename (NOT NULL), officeno (Unique), DateOfJoining(NOT NULL),CompanyName(Default),Salary(Check is : salary > 0)
      Create PersonnelDetails : ID( Foreign Key ) , Addres (NOT NULL), contactno(NOT NULL , UNIQUE) 
      Join Both tables and Display output
+
+Ans-
+create table employee(eid number ,ename varchar2(20) NOT NULL,officeno number unique,dofj date NOT NULL,
+companyname varchar2(20) default 'Digit',salary number check (salary >0),primary key (eid));
+
+
+create table pd(address varchar2(20) not null,contactno number not null unique,id number constraint fk_eid references employee(eid));
+
+insert into employee values(101,'Jose',1960,date '2020-12-13','digit',150000);
+insert into employee values(102,'Rohit',1963,date '2020-12-19','digit'800000);
+insert into employee values(103,'Jose',1964,date '2020-12-25','digit'750000);
+
+
+select * from employee;
+
+insert into pd values('yerwada',2336772839,101);
+
+insert into pd values('sangvi',2336772834,102);
+
+insert into pd values('dapodi',2336772840,103);
+
+select e.eid,e.ename,e.officeno,e.dofj,e.companyname,e.salary,p.address,p.contactno from employee e,pd p where e.eid=p.id
+=================================================================
+
+
 =====================================================================================================================================================
 ===================================================================================================================================
 
