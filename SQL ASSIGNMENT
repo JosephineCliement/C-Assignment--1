@@ -370,6 +370,24 @@ END;
 
 =========================================================================
 Q.29 create a procedure which accepts a single parameter as a integer and it is defined as IN OUT .Procedure returns the cube of the number.
+Ans-
+CREATE OR REPLACE PROCEDURE demo_pr4(x1 IN integer,x2 OUT integer) 
+IS
+BEGIN
+    x2 := x1 * x1 * x1;
+END;
+
+ 
+
+
+DECLARE
+i integer;
+BEGIN
+    demo_pr4(5,i);        
+    dbms_output.put_line('cube is :'||i);
+END;
+==================================================================================================================================
+
 Q.30 Create following procedures :
      Employee : eid (primary key),name (Not NULL), age (NOT NULL)
      a) Pocedure 1 Creates a table
