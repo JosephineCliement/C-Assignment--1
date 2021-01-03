@@ -1492,23 +1492,137 @@ Q.17 Create a Link list of 3 nodes containing 3 double values and print the aver
 Q.18 Create a Link list of 5 nodes and print it in reverse order.
 
 
+Ans. #include<stdio.h>
+     #include<stdlib.h>
+
+struct node
+{
+	int data;
+	struct node*nextptr;
+};
+
+struct node*startnode;
 
 
+void createnodelist(int numberofnodes);
 
+void reversenodelist();
 
+void displaynodelist();
 
+int main()
+{
+	int numberofnodes;
+	
+	printf("input the number of nodes : ");
+	scanf("%d",&numberofnodes);
+	
+	createnodelist(numberofnodes);
+	
+	printf("\ndata entered in the list are : \n");
+	displaynodelist();
+	
+	printf("\nthe list in reverse are : \n");
+	reversenodelist();
+	displaynodelist();
+	return 0;
+}
 
+void createnodelist(int numberofnodes)
+{
+	struct node*newnode;
+	struct node*tempnode;
+	int userinput;
+	int nodeid;
+	
+	startnode = (struct node *)malloc(sizeof(struct node));
+	
+	if(startnode == NULL)
+	{
+		printf("memory can not be allocated");
+	}
+	
+	else
+	{
+		printf("input data for user 1 : ");
+		scanf("%d", &userinput);
+		
+		startnode->data = userinput;
+		startnode->nextptr = NULL;
+		
+		tempnode = startnode;
+		
+		for(nodeid = 2; nodeid <= numberofnodes; nodeid++)
+		{
+			newnode = (struct node *)malloc(sizeof(struct node));
+			
+			if(newnode == NULL)
+			{
+				printf("memory can not be allocated. ");
+				break;
+			}
+			else
+			{
+				printf("input data for node %d : ", nodeid);
+				scanf("%d",&userinput);
+				
+				newnode->data = userinput;
+				newnode->nextptr = NULL;
+				
+				tempnode->nextptr = newnode;
+				tempnode = tempnode->nextptr;
+			}
+		}
+	}
+	 
+}
+void reversenodelist()
+{
+	struct node *previousnode;
+	struct node *currentnode;
+	
+	if(startnode != NULL)
+	{
+		previousnode = startnode;
+		
+		currentnode = startnode->nextptr;
+		startnode = startnode->nextptr;
+		
+		previousnode->nextptr = NULL;
+		
+		while(startnode != NULL)
+		{
+			startnode = startnode->nextptr;
+			currentnode->nextptr = previousnode;
+			
+			previousnode = currentnode;
+			currentnode = startnode;
+		}
+		
+		startnode = previousnode;
+	}
+}
 
-
-
-
-
-
-
-
-
-
-
+void displaynodelist()
+{
+	struct node *tempnode;
+	
+	if(startnode == NULL)
+	{
+		printf("no data found in the list.");
+	}
+	else
+	{
+		tempnode = startnode;
+		
+		while(tempnode != NULL)
+		{
+			printf("data = %d\n", tempnode->data);
+			tempnode = tempnode->nextptr;
+		}
+	}
+}
+============================================================================================================
 
 ©Q.19 Create a Link list of 3 nodes and delete the head node
 #include<stdio.h>
@@ -1570,7 +1684,43 @@ int main()
 
 
 Q.20 Create a list of 3 city names and Enter a city to be searched in the list .If city name exists in list then Display City Found.
+Ans. #include<stdio.h>
+     #include<string.h>
 
+int main()
+{
+	char str[20][50], s1[50];
+	int n,i,found=0;
+	
+    printf("ENTER HOW MANY CITIES YOU WANT TO ENTER : ");
+	scanf("%d",&n);
+	
+	printf("ENTER %d CITY NAMES :\n",n);
+	
+	for(i=0;i<n;i++)
+	{
+		scanf("%s",str[i]);
+	}
+	
+	printf("ENTER CITY NAME TO SEARCH :  ");
+	scanf("%s",s1);
+	
+	for(i=0;i<n;i++)
+	{
+		if(strcmp(s1,str[i])==0)
+		{
+			found = 1;
+			printf("FOUND %d\n",i+1);
+		}
+	}
+	
+	
+	if(found==0)
+	printf("NOT FOUND");
+	
+	return 0;
+}
+=================================================================================================================================================
 
 Q.21 Create an array of 5 integer values and search an element in the array using Linear Search.
 #include<stdio.h>
@@ -1612,7 +1762,82 @@ Q.21 Create an array of 5 integer values and search an element in the array usin
 ======================================================================================================
 
 Q.22 Create an array of string and search a perticular string using Linear Search.
+
+Ans. #include<stdio.h>
+     #include<string.h>
+
+void main()
+{
+	char name[5][10], s[10];
+	int i;
+	for(i=0; i<5; i++)
+	{
+		printf("enter name : ");
+		gets(name[i]);
+	}
+	
+	printf("enter name to search : ");
+	gets(s);
+	
+	for(i=0;i<5;i++)
+	{
+		if(strcmpi(s,name[i])==0)
+		{
+			printf("found");
+			break;
+		}
+		
+		else(i==5);
+		
+	    printf("not found");
+	    break;
+    }
+	
+}
+=====================================================================================================================================
+
 Q.23 Sort an array of 5 numbers using Insertion sort
+
+Ans. #include<stdio.h>
+     #include<conio.h>
+
+void main()
+{
+	int n, array[1000], c, d, t;
+	
+	printf("enter number of elements\n");
+	scanf("%d",&n);
+	
+	printf("enter %d integers\n", n);
+	
+	for(c=0; c < n; c++)
+	{
+		scanf("%d", &array[c]);
+	}
+	
+	for(c = 1; c <= n-1; c++)
+	{
+		d = c;
+		
+		while (d > 0 && array[d] < array[d-1])
+		{
+			t=array[d];
+			array[d]=array[d-1];
+			array[d-1]=t;
+			
+			d--;
+		}
+	}
+	
+	printf("sorted list in accending order :\n");
+	
+	for(c=0;c<=n-1;c++)
+	{
+		printf("%d\n",array[c]);
+	}
+	getch();
+}
+===================================================================================================================================
 Q.24 Make a tree which contains 3 nodes. A is Root node, B is left child and C is right child.
 #include<stdio.h>
 #include<stdlib.h>
@@ -1750,6 +1975,97 @@ int main()
      
      
 Q.26 Create a link list of 3 integers and print the elements of link list in reverse order using stack.
+
+Ans. #include<stdio.h>
+#include<stdlib.h>
+#define SIZE 3
+typedef struct nd             
+{                           
+    char data;
+    struct nd *next;
+}node;
+
+typedef struct st
+{
+    int top;
+    int elements[3];    
+}stack;
+
+void initialize(stack *sp)
+{
+    sp->top=-1;
+}
+
+node* createNode(int no)
+{
+    node *np;
+    
+    np=(node*)malloc(sizeof(node));  
+    
+    if(np == NULL)
+    {
+        printf("Memory not available");
+        exit(0);    
+    }
+    
+    np->data=no;
+    np->next=NULL;
+    
+    return np;
+}
+
+void push(stack *sp,int a)
+{
+        if(sp->top == SIZE-1)    
+            printf("\nStack overflow\n");
+        else
+            sp->elements[++sp->top]=a;
+}
+
+void display(stack *sp)
+{
+    int i;
+    printf("REVERSE ORDER :\n");
+    for(i=sp->top;i!=-1;i--)
+    {
+        printf("%d ",sp->elements[i]);    
+    }    
+}
+
+int main()
+{    
+    node *p,*head,*tail,*ptr;    
+    
+    stack s1;
+    
+    initialize(&s1);
+    
+    head=createNode(10);  
+    tail=head;
+    p=createNode(20);    
+    
+    tail->next=p;  
+    tail=tail->next;
+   
+    p=createNode(30);    
+    
+    tail->next=p;       
+    tail=tail->next;
+    
+    ptr=head;
+    printf("LIST ORDER :\n");
+    while(ptr!=NULL)
+    {
+        printf("%d ",ptr->data);
+        int a=ptr->data;
+        push(&s1,a);
+        ptr=ptr->next;
+    }
+    printf("\n");
+    
+    display(&s1);
+}
+===============================================================================================================
 Q.27 Write a program to crate an adjacency matrix(3 by 3) using graph , where create edges (0,1),(1,2),(1,1), Store the student age information.
 
 #include<stdio.h>
@@ -1809,7 +2125,140 @@ int main()
 =================================================================================================
 
 Q.28 Create a Binary Serch Tree with 10 nodes where node value is character and Traverse the tree in postorder.
+
+Ans. #include<stdio.h>
+#include<stdlib.h>
+typedef struct st
+{
+	int key;
+	struct st *left;
+	struct st *right;
+}node;
+
+node *newnode(int data)
+{
+	node *t;
+	t=(node*)malloc(sizeof(node));
+	t->key = data;
+	t->left = NULL;
+	t->right = NULL;
+	
+	return t;
+}
+
+node* insert(node *nd,int data)
+{
+	if(nd == NULL)
+	return newnode(data);
+	
+	if(data < nd->key)               //data compared to key of root
+	nd->left = insert(nd->left,data);
+	
+	else if(data > nd->key)           //data compared to key of root
+	nd->right = insert(nd->right,data);
+	
+	return nd;
+}
+
+void inorder(node* root)
+{
+	if(root == NULL)
+	return ;
+	inorder(root->left);
+	printf("%d\t",root->key);
+	inorder(root->right);
+}
+
+int main()
+{
+	node *root = NULL;
+	root = insert(root,50);
+	insert(root,20);
+	insert(root,34);
+	insert(root,43);
+	insert(root,21);
+	insert(root,67);
+	
+	inorder(root);
+}
+=======================================================================================================================================================
+
 Q.29 Create an unsorted array of 5 elements and sort the array in descending order using bubble sort and search an element in array using Binary Search.
+
+Ans. #include <stdio.h>
+
+int binarySearch(int a[], int beg, int end, int item)   
+{                                                      
+    int mid;  
+    if(end >= beg)   
+    {     
+        mid = (beg + end)/2;  
+        if(a[mid] == item)    
+        {  
+            return mid+1;     
+        }  
+        else if(a[mid] > item)   
+        {  
+            return binarySearch(a,mid+1,end,item);  
+        }  
+        else   
+        {  
+            return binarySearch(a,beg,mid-1,item);  
+        }  
+      
+   }  
+    return -1;   
+}  
+
+int main()
+{
+    int  i, j, temp;
+    int first, last, middle,search,arr[10],location=-1;
+    
+    printf("INTEGERS : \n",10);
+
+
+  for (i=0;i<10;i++)
+    scanf("%d", &arr[i]);
+      for (i=0;i<10;i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    
+  for (i=0;i<10;i++)
+  {
+    for (j=i-1 ;j<10;j++)
+    {
+      if (arr[j] < arr[i]) 
+      {
+        temp=arr[j];
+        arr[j]=arr[i];
+        arr[i]=temp;
+      }
+    }
+  }
+    printf("\nDESCENDING ORDER:\n");
+    for (i=0;i<10;i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n\n");
+
+    printf("Enter value to find\n");
+    scanf("%d", &search);
+    
+    location = binarySearch(arr, 0, 9, search); 
+     
+       if(location != -1)   
+    {  
+        printf("ITEM FOUND %d",location);  
+    }  
+    else  
+    {  
+        printf("ITEM NOT FOUND");  
+    } 
+ }
+ ========================================================================================================================================
 
 
 
