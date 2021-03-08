@@ -408,20 +408,147 @@ Q.30 Create following procedures :
      e) Procedure 5 shows all records.
      f) Procedure 6 shows the record based on employee id.
      g) Procedure 7 arranges all records age wise in ascending order.
+     
+ Ans)
+ 
+ create table V1(EID number(5) primary key,NAME varchar(20) not null,AGE number(3) not null,check(AGE > 18));
+
+select * from V1;
+
+create or replace procedure PRO(EID in number,NAME in varchar2,AGE in number)
+IS
+BEGIN
+
+      insert into V1 values(EID,NAME,AGE);
+END;
+
+DECLARE
+
+BEGIN
+
+     PRO (111 ,'VISHAL', 19);
+     PRO (222 ,'ARJUN',  19);
+     PRO (333 ,'DHIRAJ', 20);
+     PRO (444 ,'SAHIL',  19);
+     PRO (555 ,'RAJ',    20);
+
+END;
+
+DECLARE 
+
+BEGIN
+
+      update V1 set NAME = 'GANESH', where EID = 555;
+END;
+
+DECLARE
+
+BEGIN
+
+      delete from V1 where EID = 444;
+
+END;
+
+
+select * from V1;
+
+CREATE OR REPLACE PROCEDURE showrec(no in number)
+IS
+           e number(5);
+           n varchar2(20);
+           a number(3);
+
+BEGIN
+
+select EID,NAME,AGE into i,n,a from V1 where EID = no;
+
+          dbms_output.put_line(i || ' ' || n || ' ' || a);
+
+END;
+
+           execute showrec(111);
+
+
+DECLARE
+
+BEGIN
+
+          select * from V1 ORDER BY AGE ASC;
+
+END;
+===========================================================================================================================================================================
 Q.31 Create a function which accepts your name as a parameter and age and returns the following string as an output :
      Ex:  Input Name :  abcd 
           Output     :  ABCD 24
+      
+ANS. SET SERVEROUTPUT ON
+
+CREATE OR REPLACE FUNCTION F1(NAME in varchar2, AGE in number) RETURN VARCHAR2
+IS
+
+BEGIN
+
+      return NAME;
+      
+END;
+
+CREATE OR REPLACE FUNCTION F2(name in varchar2,age in number) RETURN number
+IS
+
+BEGIN
+
+      return AGE;
+      
+END;
+
+DECLARE
+
+        VV varchar2(10);
+        MM varchar2(20);
+                
+BEGIN
+
+        VV := F1('JOSEPHINE',19);
+        MM := F2('CLEMENT',20);
+
+        dbms_output.put_line(UPPER(VV) || ' ' || MM);
+
+END;
+=========================================================================================================================================================================
 Q.32 Create a function which is applied on the following table : EMPLOYEE (ename , salary)
      Function will return the avg salary of employees.
-Q.33 Create a procedure to see a record of an employee in Q.30 . Make a record variable in the same procedure . Using the record variable show the name and age.
-Q.34 Create a function which accepts one argument as an integer. The function is dividing a number by the argument passed. If the passed number is zero then
-     handle zero divide exception.
-Q.35 Create a procedure which is inserting a record in a table named as IDCard (name,age,city). IF AGE is less than insertion will not be possible and will generate
-     an exception message "Age is less than 18" otherwise insert record in the table and print as "Data saved successfully".
+Ans)
      
-=============================================================================================================================
+ANS. set serveroutput on
 
+create table employees(ENAME varchar2(20), SALARY number(10));
 
-=====================================================================================================================================================
-===================================================================================================================================
+create or replace procedure vm(ENAME in varchar2, SALARY in number)
+is
+begin
+insert into employees values(ENAME, SALARY);
+end;
 
+begin
+vm('vishal', 90000);
+vm('arjun',  80000);
+vm('dhiraj', 70000);
+vm('pavan',  60000);
+vm('sahil',  50000);
+end;
+
+create or replace function avge return number
+as
+v number;
+begin
+select avge(salary) into v from employee;
+return v;
+end;
+
+declare
+m number;
+begin
+a := avge;
+dbms_output.put_line('AVERAGE SALARY IS :' || m);
+end;_
+==========================================================================================================================================================================
